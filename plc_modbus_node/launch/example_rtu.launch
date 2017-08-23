@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="plc_modbus_node" type="ros_plc_modbus" name="plc_modbus_node" output="screen" >
+        <param name="device" value="/dev/ttyXRUSB0"/>
+        <param name="baudrate" value="115200"/>
+        <param name="bit_num" value="1"/>
+        <param name="parity" value="N"/>
+        <param name="stop_bit" value="1"/>
+        <param name="slave_id" value="0x01"/>
+        <rosparam param="coils_addr">[0,1]</rosparam>
+        <rosparam param="regs_addr">[0x9004]</rosparam>
+        <rosparam param="regs_input_addr">[0x3104, 0x331A]</rosparam>
+    </node>
+</launch>
